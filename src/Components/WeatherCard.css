@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
+
+/* Quick and dirty normalize hax */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.searchInputWrapper {
+  position: relative;
+}
+
+.searchInput {
+  width: 20rem;
+  height: 2rem;
+  padding: 1.5rem 1rem;
+  border-radius: 2rem;
+  border: none;
+  transition: transform 0.1s ease-in-out;
+}
+
+::placeholder {
+  color: #a1a1a1;
+}
+
+/* hide the placeholder text on focus */
+:focus::placeholder {
+  text-indent: -999px;
+}
+
+.searchInput:focus {
+  outline: none;
+  transform: scale(1.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.searchInputIcon {
+  position: absolute;
+  right: 0.8rem;
+  top: 1rem;
+  color: #a1a1a1;
+  transition: all 0.1s ease-in-out;
+}
+
+.container:focus-within > .searchInputWrapper > .searchInputIcon {
+  right: 0.2rem;
+}
+
+body {
+  background: #3a7bd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a6073,
+    #3a7bd5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a6073,
+    #3a7bd5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-family: Poiret One;
+}
+
+.widget {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  height: 300px;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  flex-wrap: wrap;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3),
+    0 17px 17px 0 rgba(0, 0, 0, 0.15);
+}
+.widget .weatherIcon {
+  flex: 1 100%;
+  height: 60%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #fafafa;
+  font-family: weathericons;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 100px;
+}
+.widget .weatherIcon i {
+  padding-top: 30px;
+}
+.widget .weatherInfo {
+  flex: 0 0 70%;
+  height: 40%;
+  background: #080705;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 15px;
+}
+.widget .weatherInfo .temperature {
+  flex: 0 0 40%;
+  width: 100%;
+  font-size: 65px;
+  display: flex;
+  justify-content: space-around;
+}
+.widget .weatherInfo .description {
+  flex: 0 60%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  text-align: right;
+}
+.widget .weatherInfo .description .weatherCondition {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+.widget .weatherInfo .description .place {
+  font-size: 15px;
+}
+.widget .date {
+  flex: 0 0 30%;
+  height: 40%;
+  background: #70c1b3;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+}
