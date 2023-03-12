@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
 
-/* Quick and dirty normalize hax */
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +33,6 @@
   color: #a1a1a1;
 }
 
-/* hide the placeholder text on focus */
 :focus::placeholder {
   text-indent: -999px;
 }
@@ -130,7 +128,7 @@ body {
 }
 .widget .weatherInfo .description .weatherCondition {
   text-transform: uppercase;
-  font-size: 35px;
+  font-size: 26px;
   font-weight: 100;
   margin-bottom: 10px;
 }
@@ -148,4 +146,21 @@ body {
   color: white;
   font-size: 30px;
   font-weight: 800;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.spinner img {
+  width: 180px;
+}
+
+.error_msg {
+  text-align: center;
+  margin: 30px auto;
+  color: #fff;
+  font-size: 40px;
 }

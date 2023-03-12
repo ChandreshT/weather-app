@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./WeatherCard.css";
 
 const SearchBar = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState("");
@@ -11,6 +10,7 @@ const SearchBar = ({ onSearch }) => {
   const onInputSubmit = (e) => {
     e.preventDefault();
     onSearch(inputValue);
+    setInputValue("");
   };
 
   return (

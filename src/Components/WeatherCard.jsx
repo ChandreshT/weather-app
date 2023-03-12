@@ -1,7 +1,6 @@
 import React from "react";
-import "./WeatherCard.css";
 
-const WeatherCard = ({ city, temp, weather }) => {
+const WeatherCard = ({ city, temp, weather, country }) => {
   const today = new Date();
   const currentMonth = today.toLocaleString("default", { month: "short" });
   const currentDate = today.getDate();
@@ -17,7 +16,7 @@ const WeatherCard = ({ city, temp, weather }) => {
         </div>
         <div className="description">
           <div className="weatherCondition">{weather}</div>
-          <div className="place">{city}</div>
+          <div className="place">{`${city}, ${country}`}</div>
         </div>
       </div>
       <div className="date">{`${currentDate} ${currentMonth}`}</div>
